@@ -1,6 +1,6 @@
 import inquirer from "inquirer";
 
-const systemGeneratedNo = Math.floor(Math.random() * 10+ 1 );
+let systemGeneratedNo = Math.floor(Math.random() * 10+ 1 );
 
 let numTries: number = 3;
 let play: boolean = true;
@@ -26,7 +26,7 @@ const answers : ansType = await inquirer.prompt([
 
 const {userGuess} = answers;
 
-console.log(userGuess, "userGuess", systemGeneratedNo, 'SYs')
+// console.log(userGuess, "userGuess", systemGeneratedNo, 'SYs')
 console.log(`You have ${numTries- 1} left `)
 
 if(answers.userGuess === systemGeneratedNo){
@@ -43,7 +43,6 @@ else {
 }
   numTries--;
 }
-}
   const playAgainAnswer = await inquirer.prompt ([
     {
         type: "confirm",
@@ -51,14 +50,16 @@ else {
         message: "Wanna play again",
     },
   ]); 
-  console.log("playAgain",playAgainAnswer);
-  if (playAgainAnswer.playAgain) {
+  console.log(playAgainAnswer.playAgain);
+
+  {
+    if (playAgainAnswer.playAgain) {
     numTries = 3;
-    const systemGeneratedNo = Math.floor(Math.random() * 10+ 1 );
+    systemGeneratedNo = Math.floor(Math.random() * 10+ 1 );
   } else {
     console.log("Exitting game.....")
     play = false;
   }
-
-
+  }
+}
 
