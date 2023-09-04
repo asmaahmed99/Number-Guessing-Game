@@ -7,11 +7,11 @@ let play: boolean = true;
 
 type ansType = {
     userGuess: number
-}
+};
 
 type playAgainAnswerType = {
     playAgain: boolean
-}
+};
 
 while (play) {
 while (numTries > 0) {
@@ -39,8 +39,8 @@ else {
     else{
         console.log("Think lower");
     
-    }
-}
+    };
+};
   numTries--;
 }
   const playAgainAnswer = await inquirer.prompt ([
@@ -60,6 +60,7 @@ else {
     console.log("Exitting game.....")
     play = false;
   }
-  }
-}
+  };
+
+};
 
