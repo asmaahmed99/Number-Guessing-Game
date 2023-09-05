@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 
 let systemGeneratedNo = Math.floor(Math.random() * 10+ 1 );

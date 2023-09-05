@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 let systemGeneratedNo = Math.floor(Math.random() * 10 + 1);
 let numTries = 3;
@@ -25,7 +26,9 @@ while (play) {
             else {
                 console.log("Think lower");
             }
+            ;
         }
+        ;
         numTries--;
     }
     const playAgainAnswer = await inquirer.prompt([
@@ -46,4 +49,6 @@ while (play) {
             play = false;
         }
     }
+    ;
 }
+;
